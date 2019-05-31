@@ -1,6 +1,6 @@
 extern crate chrono;
 
-use chrono::{Date, Utc, Local};
+use chrono::{Date, Local};
 
 #[derive(Debug)]
 pub struct TodoItem {
@@ -82,5 +82,9 @@ impl TodoSet {
             date: Local::today(),
             list: vec![],
         }
+    }
+
+    pub fn add_todo(&mut self, item: TodoItem) {
+        self.list.push(item);
     }
 }
